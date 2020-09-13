@@ -14,17 +14,28 @@
       </li>
     </ul>
     <ul class="navbar-nav my-2">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hi member !
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Purchase record</a>
-                <a class="dropdown-item" href="#">Admin panel</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Log out</a>
-            </div>
-        </li>
+        <% if !current_user %>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href=<%=new_user_registration_path%>>Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=<%=new_user_session_path%>>Log in</a>
+                </li>
+            </ul>
+        <% else %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi, <%= current_user.email %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Purchase record</a>
+                    <a class="dropdown-item" href="#">Admin panel</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </li>
+        <% end %>
     </ul>
   </div>
 </nav>
