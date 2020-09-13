@@ -1,7 +1,5 @@
 <h1> Add a course </h1>
-
-<%= simple_form_for @course do |f| %>
-
+<%= simple_form_for [:admin,@course] do |f| %>
 <%= f.input :title %>
 <%= f.input :price %>
 <%= f.input :currency %>
@@ -10,5 +8,5 @@
 <%= f.input :link %>
 <%= f.input :description %>
 <%= f.input :expiry_day %>
-<%= f.submit "Submit" %>
+<%= f.submit "Submit", :class => "btn btn-primary" %>
 <% end %>

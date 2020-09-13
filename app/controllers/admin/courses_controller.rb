@@ -1,13 +1,9 @@
-class CoursesController < ApplicationController
-  
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy] # operate after log in
-
-  def show
-    @course = Course.find(params[:id])
-  end
+class Admin::CoursesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :require_is_admin
 
   def index
-    @courses = Course.all.where(:is_available => true)
+    @courses = Course.all
   end
 
   def new
@@ -18,7 +14,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to courses_path
+      redirect_to admin_courses_path
     else
       render :new
     end
@@ -30,8 +26,9 @@ class CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
+
     if @course.update(course_params)
-      redirect_to courses_path
+      redirect_to admin_courses_path
     else
       render :edit
     end
@@ -42,12 +39,12 @@ class CoursesController < ApplicationController
 
     @course.destroy
 
-    redirect_to courses_path
+    redirect_to admin_courses_path
   end
 
   private
 
   def course_params
-    params.require(:course).permit(:title, :description)
+    params.require(:course).permit(:title, :price, :currency, :course_type, :is_available, :link, :description, :expiry_day)
   end
 end

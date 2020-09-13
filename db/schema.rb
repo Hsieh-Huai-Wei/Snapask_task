@@ -10,20 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_063124) do
-
-  create_table "courses", force: :cascade do |t|
-    t.string "title"
-    t.float "price"
-    t.string "currency"
-    t.string "course_type"
-    t.boolean "is_available"
-    t.text "link"
-    t.text "description"
-    t.date "expiry_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_09_13_171144) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

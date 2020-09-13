@@ -8,7 +8,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.boolean :is_available
       t.text :link
       t.text :description
-      t.date :expiry_date
+      t.integer :expiry_day
 
       t.timestamps
     end

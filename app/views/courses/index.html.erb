@@ -1,79 +1,13 @@
-<button class="btn" style="float:right; padding-right: 0px;">
-  <%= link_to("Add a course", new_course_path, :class => "btn btn-outline-info") %>
-</button>
-
-<table class="table table-bordered">
-  <tr>
-    <td>
-      <p>Course</p>
-    </td>
-    <td>
-      <p>title</p>
-    </td>
-    <td>
-      <p>price</p>
-    </td>
-    <td>
-      <p>currency</p>
-    </td>
-    <td>
-      <p>course_type</p>
-    </td>
-    <td>
-      <p>is_available</p>
-    </td>
-    <td>
-      <p>link</p>
-    </td>
-    <td>
-      <p>description</p>
-    </td>
-    <td>
-      <p>expiry_date</p>
-    </td>
-    <td>
-      <p>created_at</p>
-    </td>
-    <td>
-      <p>operation</p>
-    </td>
-  </tr>
-  <% @courses.each do |course| %>
-  <tr>
-    <td>
-      <%= link_to(course.title, course_path(course)) %>
-    </td>
-    <td>
-      <%= course.title %>
-    </td>
-    <td>
-      <%= course.price %>
-    </td>
-    <td>
-      <%= course.currency %>
-    </td>
-    <td>
-      <%= course.course_type %>
-    </td>
-    <td>
-      <%= course.is_available %>
-    </td>
-    <td>
-      <%= course.link %>
-    </td>
-    <td>
-      <%= course.description %>
-    </td>
-    <td>
-      <%= course.expiry_date %>
-    </td>
-    <td>
-      <%= course.created_at %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_course_path(course)) %> |
-      <%= link_to("Destroy", course_path(course), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="row" style="margin-top: 10px">
+<% @courses.each do |course| %>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= course.title %></h5>
+        <p class="card-text"><%= course.description %></p>
+        <a href=<%= course_path(course) %> class="btn btn-primary">More</a>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
