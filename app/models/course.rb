@@ -6,4 +6,8 @@ class Course < ApplicationRecord
   validates :link, presence: true
   validates :description, presence: true
   validates :expiry_day, numericality: { greater_than: 0, less_than: 31}
+
+  has_many :purchase_orders
+  has_many :users, :through => :purchase_orders
+
 end

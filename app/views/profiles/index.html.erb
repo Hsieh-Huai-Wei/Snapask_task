@@ -1,0 +1,13 @@
+<div class="card" style="width: 60rem; height: 30rem; margin-top: 15px;">
+<% @purchase_order.each do |purchase| %>
+  <div class="card-body">
+    <div class="alert alert-primary" role="alert" style="width:57.5rem;">
+      <h5 class="card-title"><%= purchase.title %></h5>
+    </div>
+
+    <div class="alert alert-info" role="alert" style="width:10rem;">
+      <%= purchase.created_at %>
+    </div>
+  </div>
+<% end %>
+</div>

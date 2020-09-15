@@ -6,5 +6,14 @@ Rails.application.routes.draw do
     resources :courses
   end
   resources :courses
+  
+  resources :profiles
+  
+  resources :courses do
+    member do
+      post :purchase_course
+    end
+  end
+
   root 'courses#index'
 end
