@@ -1,0 +1,35 @@
+<%= render "common/flashes" %>
+<div class="row" style="margin-top: 10px"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/profiles">History<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/availables">Available</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Class
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/languages">language</a>
+          <a class="dropdown-item" href="/maths">math</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<% @math.each do |math| %>
+<div class="col-sm-4" style="margin: 10px 0px">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= math.title %></h5>
+      <p class="card-text"><%= math.description %></p>
+      <a href=/profiles/<%= math.id %> class="btn btn-primary">More</a>
+    </div>
+  </div>
+</div>
+<% end %>
