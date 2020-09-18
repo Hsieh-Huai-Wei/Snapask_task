@@ -1,24 +1,51 @@
-# README
+# snapask-task
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Courses website
 
-Things you may want to cover:
+## Role
+### admin
+* account: admin@admin.com
+* password: 123456
+### user
+* account: user@user.com
+* password: 123456
 
-* Ruby version
+## Table of content
+* [Technologies](#Technologies)
+* [Database design](#Database-design)
+* [Features](#Features)
+* [Author](#Author)
 
-* System dependencies
+## Technologies
 
-* Configuration
+### Backend
 
-* Database creation
+* Linux
+* Ruby / Ruby on Rails
 
-* Database initialization
+### Frontend
 
-* How to run the test suite
+* JavaScript ( ES6 )
+* HTML
+* CSS
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database design
+![Example screenshot](https://i.imgur.com/yhSmiA4.png)
 
-* Deployment instructions
+## Features
 
-* ...
+### Admin login
+* administrator login
+![Demo Historical Price Query Page alpha](https://i.imgur.com/bZjiz4K.gif)
+
+### Admin panel
+* Log in as an administrator, and click the administration panel at the configuration file to perform CRUD.
+![Demo Back Test Page alpha](https://i.imgur.com/mxy3zsd.gif)
+
+### User login & Purchase history
+* Log in as an ordinary user, and click on the purchase history in the file to inquire about the details of courses.
+![Demo User Purchase History](https://i.imgur.com/qGTsOZx.gif)
+
+
+## Author
+Hsieh-Huai-Wei [@Hsieh-Huai-Wei](https://github.com/Hsieh-Huai-Wei)
