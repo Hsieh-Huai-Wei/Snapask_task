@@ -14,21 +14,21 @@
           Class
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/languages">Language</a>
-          <a class="dropdown-item" href="/maths">Math</a>
+          <a class="dropdown-item" href="/languages">language</a>
+          <a class="dropdown-item" href="/maths">math</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
 
-<% @history.each do |history| %>
+<% @language.each do |language| %>
 <div class="col-sm-4" style="margin: 10px 0px">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= history.title %></h5>
-      <p class="card-text"><%= history.description %></p>
-      <a href=/profiles/<%= history.id %> class="btn btn-primary">More</a>
+      <h5 class="card-title"><%= language.title %></h5>
+      <p class="card-text"><%= language.description %></p>
+      <a href=/profiles/<%= language.id %> class="btn btn-primary">More</a>
     </div>
   </div>
 </div>

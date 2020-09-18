@@ -1,14 +1,25 @@
-<%= render "common/flashes" %>
-<div class="row" style="margin-top: 10px">
-<% @courses.each do |course| %>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= course.title %></h5>
-        <p class="card-text"><%= course.description %></p>
-        <a href=<%= course_path(course) %> class="btn btn-primary">More</a>
+<script>
+  fetch("/api/v1/courses", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((res) => res.json())
+    .then((body) => {
+      row = document.querySelector('.row')
+      for (let i = 0; i < body.length; i++) {
+        row.innerHTML += `<div class="col-sm-4" style="margin: 10px 0px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${body[i].title}</h5>
+          <p class="card-text">${body[i].description}</p>
+          <a href="/courses/${body[i].id}" class="btn btn-primary">More</a>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
-</div>
+    </div>`
+      }
+    })
+</script>
+<%= render "common/flashes" %>
+<div class="row" style="margin-top: 10px"></div>

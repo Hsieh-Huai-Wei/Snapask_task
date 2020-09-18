@@ -1,24 +1,21 @@
+<%= javascript_pack_tag 'show', 'data-turbolinks-track': 'reload' %>
 <%= render "common/flashes" %>
 <div class="card" style="width: 60rem; height: 30rem; margin-top: 15px;">
   <div class="card-body">
     <div class="alert alert-primary" role="alert" style="width:57.5rem;">
-      <h5 class="card-title"><%= @course.title %></h5>
+      <h5 class="card-title"></h5>
     </div>
     <div class="alert alert-secondary" role="alert" style="width:57.5rem;">
-      <h6 class="card-subtitle mb-2 text-muted"><%= @course.course_type %></h6>
+      <h6 class="card-subtitle mb-2 text-muted course-type"></h6>
     </div>
     <div class="alert alert-success" role="alert" style="width:57.5rem;">
-      <p class="card-text"><%= @course.description %></p>
+      <p class="card-text"></p>
     </div>
     <div class="alert alert-danger" role="alert" style="width:10rem;">
-      <h6 class="card-subtitle mb-2 text-muted"><%= @course.currency %>: <%= @course.price %></h6>
+      <h6 class="card-subtitle mb-2 text-muted price"></h6>
     </div>
-    <div class="alert alert-warning" role="alert" style="width:10rem;">
-      <%= @course.is_available %>
-    </div>
-    <div class="alert alert-info" role="alert" style="width:10rem;">
-      <%= @course.expiry_day %>
-    </div>
+    <div class="alert alert-warning" role="alert" style="width:10rem;"></div>
+    <div class="alert alert-info" role="alert" style="width:10rem;"></div>
     <button type="button" class="btn btn-info"><a href=<%= purchase_course_course_path(@course) %> class="card-link" style="color: white;" data-method="POST">Purchase</a></button>
   </div>
 </div>

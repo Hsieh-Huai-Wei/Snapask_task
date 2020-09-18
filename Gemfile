@@ -38,6 +38,11 @@ gem 'devise'
 # add forms for different countries
 gem 'simple_form'
 
+# RESTful API framework
+gem 'grape'
+gem 'grape-entity'
+gem 'grape_on_rails_routes', '~> 0.3.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
